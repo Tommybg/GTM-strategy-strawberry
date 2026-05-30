@@ -1,4 +1,6 @@
-name = "gtm-strategy-strawberry"
+name = "tbg-plan-strawberry"
+compatibility_date = "2026-05-30"
 
 [assets]
 directory = "./public"
+
