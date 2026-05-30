@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTM Brief — Tommy Barong for Strawberry</title>
+    <style>
+        @font-face {
+            font-family: "Strawberry Sans";
+            src: url("https://strawberrybrowser.com/fonts/Strawberry-Sans.woff2") format("woff2");
+            font-weight: 100 900;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "Strawberry Serif";
+            src: url("https://strawberrybrowser.com/fonts/Strawberry-Serif.woff2") format("woff2");
+            font-weight: 500;
+            font-display: swap;
+        }
+    </style>
+    <style>
+        :root {
+            --bg: #FFFCFA;
+            --bg2: #F7F2ED;
+            --ink: #252522;
+            --ink56: rgba(37, 37, 34, 0.56);
+            --ink24: rgba(37, 37, 34, 0.24);
+            --stroke: #EFE6DC;
+            --stroke2: #E2D6C9;
+            --dark: #252522;
+            --cream: #FFFCFA;
+            --rappi: #FF441A;
+            --rappi-bg: #FFF2EE;
+            --rappi-st: rgba(255, 68, 26, 0.18);
+            --pill: 100px;
+            --r: 12px;
+            --r-sm: 6px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "Strawberry Sans", system-ui, -apple-system, sans-serif;
+            font-size: 15px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 252, 250, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--stroke);
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 28px;
+        }
+
+        .nav-brand {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink);
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--ink56);
+            text-decoration: none;
+            padding: 5px 11px;
+            border-radius: var(--pill);
+            transition: all 0.15s;
+        }
+
+        .nav-links a:hover {
+            background: var(--bg2);
+            color: var(--ink);
+        }
+
+        .nav-links a.active {
+            background: var(--bg2);
+            color: var(--ink);
+        }
+
+        .nav-cta {
+            background: var(--ink);
+            color: var(--cream) !important;
+            padding: 6px 16px !important;
+            border-radius: var(--pill) !important;
+            font-weight: 500 !important;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.8;
+            background: var(--ink) !important;
+        }
+
+        /* LAYOUT */
+        .wrap {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 72px 28px;
+            scroll-margin-top: 60px;
+        }
+
+        .wrap-tint {
+            background: var(--bg2);
+        }
+
+        .wrap-dark {
+            background: var(--dark);
+            color: var(--cream);
+        }
+
+        .rule {
+            height: 1px;
+            background: var(--stroke);
+        }
+
+        .rule-dark {
+            height: 1px;
+            background: rgba(255, 252, 250, 0.08);
+        }
+
+        /* TAGS */
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1px solid var(--stroke);
+            border-radius: var(--pill);
+            padding: 3px 12px;
+            margin-bottom: 18px;
+            background: var(--bg);
+            color: var(--ink56);
+        }
+
+        .tag-rappi {
+            color: var(--rappi);
+            border-color: var(--rappi-st);
+            background: var(--rappi-bg);
+        }
+
+        .wrap-dark .tag {
+            color: rgba(255, 252, 250, 0.4);
+            border-color: rgba(255, 252, 250, 0.12);
+            background: rgba(255, 252, 250, 0.05);
+        }
+
+        /* HEADINGS */
+        h1,
+        h2 {
+            font-weight: 480;
+            letter-spacing: -0.04em;
+            line-height: 1.04;
+            font-family: "Strawberry Sans", system-ui, sans-serif;
+        }
+
+        h1 {
+            font-size: clamp(42px, 6.5vw, 72px);
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-size: clamp(30px, 4.5vw, 48px);
+            margin-bottom: 14px;
+        }
+
+        h2 em,
+        h1 em {
+            font-style: normal;
+            font-family: "Strawberry Serif", Georgia, serif;
+            font-weight: 500;
+        }
+
+        .intro {
+            font-size: 16px;
+            color: var(--ink56);
+            max-width: 500px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .wrap-dark .intro {
+            color: rgba(255, 252, 250, 0.45);
+        }
+
+        .wrap-dark h2 {
+            color: var(--cream);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 88px 28px 64px;
+        }
+
+        .hero-tag {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--ink56);
+            border: 1px solid var(--stroke);
+            border-radius: var(--pill);
+            padding: 5px 16px;
+            margin-bottom: 28px;
+            background: var(--bg2);
+            letter-spacing: 0.03em;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            max-width: 700px;
+            margin-bottom: 16px;
+        }
+
+        .hero .sub {
+            font-size: 17px;
+            color: var(--ink56);
+            max-width: 460px;
+            margin: 0 auto 44px;
+            line-height: 1.55;
+        }
+
+        /* COMMIT CARDS */
+        .commit-row {
+            display: flex;
+            gap: 1px;
+            background: var(--stroke);
+            border: 1px solid var(--stroke);
+            border-radius: var(--r);
+            overflow: hidden;
+            max-width: 620px;
+            width: 100%;
+            margin-bottom: 32px;
+        }
+
+        .commit-cell {
+            flex: 1;
+            background: var(--bg);
+            padding: 22px 18px;
+            text-align: center;
+        }
+
+        .c-tag {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--rappi);
+            background: var(--rappi-bg);
+            border: 1px solid var(--rappi-st);
+            border-radius: var(--pill);
+            padding: 2px 9px;
+            margin-bottom: 9px;
+            display: inline-block;
+        }
+
+        .c-num {
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            color: var(--ink);
+            font-family: "Strawberry Serif", Georgia, serif;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .c-desc {
+            font-size: 11px;
+            color: var(--ink56);
+            line-height: 1.4;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .btn {
+            font-family: "Strawberry Sans", system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: var(--pill);
+            padding: 11px 26px;
+            letter-spacing: -0.01em;
+            cursor: pointer;
+            transition: opacity 0.15s, background 0.15s;
+        }
+
+        .btn-dark {
+            background: var(--ink);
+            color: var(--cream);
+            border: none;
+        }
+
+        .btn-dark:hover {
+            opacity: 0.78;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--ink56);
+            border: 1px solid var(--stroke);
+        }
+
+        .btn-ghost:hover {
+            background: var(--bg2);
+            color: var(--ink);
+        }
+
+        /* QUOTE */
+        .quote {
+            border: 1px solid var(--stroke);
+            border-left: 3px solid var(--stroke2);
+            border-radius: var(--r);
+            padding: 24px 24px 20px;
+            margin-bottom: 10px;
+            background: var(--bg);
+        }
+
+        .quote p {
+            font-size: 17px;
+            font-style: italic;
+            font-family: "Strawberry Serif", Georgia, serif;
+            font-weight: 500;
+            color: var(--ink);
+            line-height: 1.55;
+            margin-bottom: 12px;
+        }
+
+        .quote p::before {
+            content: '"';
+        }
+
+        .quote p::after {
+            content: '"';
+        }
+
+        .quote-attr {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ink56);
+        }
+
+        /* CALLOUT */
+        .callout {
+            border-radius: var(--r);
+            padding: 20px 22px;
+            margin-bottom: 10px;
+            border: 1px solid var(--stroke);
+            background: var(--bg2);
+        }
+
+        .callout.rappi {
+            background: var(--rappi-bg);
+            border-color: var(--rappi-st);
+            border-left: 3px solid var(--rappi);
+        }
+
+        .callout-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink56);
+            margin-bottom: 10px;
+        }
+
+        .callout.rappi .callout-label {
+            color: var(--rappi);
+        }
+
+        .callout li {
+            list-style: none;
+            font-size: 14px;
+            color: var(--ink);
+            padding: 3px 0 3px 14px;
+            position: relative;
+        }
+
+        .callout li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--ink56);
+        }
+
+        .callout.rappi li::before {
+            color: var(--rappi);
+        }
+
+        .callout p {
+            font-size: 14px;
+            color: var(--ink);
+            line-height: 1.65;
+        }
+
+        code {
+            font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+            background: rgba(37, 37, 34, 0.07);
+            color: var(--ink);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        /* ROLE DIAGRAM */
+        .roles {
+            display: grid;
+            grid-template-columns: 1fr 40px 1fr;
+            align-items: center;
+            gap: 0;
+            margin: 0 auto 28px auto;
+            max-width: 520px;
+        }
+
+        .role-card {
+            border: 1px solid var(--stroke);
+            border-radius: var(--r);
+            padding: 20px 16px;
+            text-align: center;
+            background: var(--bg);
+            transition: border-color 0.15s, background 0.15s;
+        }
+
+        .role-card:hover {
+            background: var(--bg2);
+            border-color: var(--stroke2);
+        }
+
+        .role-card.highlight {
+            border-color: var(--rappi);
+            background: var(--rappi-bg);
+        }
+
+        .role-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .role-name {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink56);
+            margin-bottom: 5px;
+        }
+
+        .role-card.highlight .role-name {
+            color: var(--rappi);
+        }
+
+        .role-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+
+        .role-sub {
+            font-size: 11px;
+            color: var(--ink56);
+            line-height: 1.4;
+        }
+
+        .role-card.highlight .role-sub {
+            color: rgba(255, 68, 26, 0.65);
+        }
+
+        .role-arrow {
+            text-align: center;
+            color: var(--ink24);
+            font-size: 20px;
+        }
+
+        .role-note {
+            border: 1px solid var(--stroke);
+            border-radius: var(--r);
+            padding: 16px 20px;
+            background: var(--bg2);
+            font-size: 13px;
+            color: var(--ink56);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .role-note strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        /* PROCESS STAGES */
+        .stages {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 28px;
+        }
+
+        .stage {
+            border: 1px solid var(--stroke);
+            border-radius: var(--r);
+            background: var(--bg);
+            cursor: pointer;
+            overflow: hidden;
+            transition: border-color 0.15s;
+        }
+
+        .stage:hover {
+            border-color: var(--stroke2);
+        }
+
+        .stage.open {
+            border-color: var(--ink24);
+        }
+
+        .stage-header {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            gap: 14px;
+        }
+
+        .stage-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid var(--stroke);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--ink56);
+            flex-shrink: 0;
+            font-family: "Strawberry Serif", Georgia, serif;
+        }
+
+        .stage.open .stage-num {
+            background: var(--ink);
+            color: var(--cream);
+            border-color: var(--ink);
+        }
+
+        .stage-title {
+            flex: 1;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink);
+            letter-spacing: -0.01em;
+        }
+
+        .stage-sub {
+            font-size: 12px;
+            color: var(--ink56);
+        }
+
+        .stage-chevron {
+            font-size: 10px;
+            color: var(--ink56);
+            transition: transform 0.2s;
+        }
+
+        .stage.open .stage-chevron {
+            transform: rotate(180deg);
+        }
+
+        .stage-body {
+            display: none;
+            border-top: 1px solid var(--stroke);
+            padding: 16px 18px 18px;
+            font-size: 14px;
+            color: var(--ink56);
+            line-height: 1.65;
+        }
+
+        .stage-body strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .stage.open .stage-body {
+            display: block;
+        }
+
+        .stage-body .rappi-note {
+            margin-top: 10px;
+            padding: 10px 14px;
+            background: var(--rappi-bg);
+            border: 1px solid var(--rappi-st);
+            border-radius: var(--r-sm);
+            font-size: 13px;
+            color: var(--ink);
+        }
+
+        .stage-body .rappi-note span {
+            color: var(--rappi);
+            font-weight: 600;
+        }
+
+        /* 10-DAY PLAN */
+        .ten-day {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .ten-card {
+            border: 1px solid var(--stroke);
+            border-radius: var(--r);
+            padding: 20px;
+            background: var(--bg);
+        }
+
+        .ten-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink56);
+            margin-bottom: 8px;
+        }
+
+        .ten-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+
+        .ten-card p {
+            font-size: 13px;
+            color: var(--ink56);
+            line-height: 1.55;
+        }
+
+        .ten-card.focus {
+            border-color: var(--ink24);
+        }
+
+        .ten-card.focus .ten-label {
+            color: var(--ink);
+        }
+
+        /* EDGE */
+        .edges {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .edge-card {
+            border: 1px solid var(--stroke);
+            border-radius: var(--r);
+            padding: 20px 22px;
+            background: var(--bg);
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            transition: border-color 0.15s, background 0.15s;
+        }
+
+        .edge-card:hover {
+            background: var(--bg2);
+            border-color: var(--stroke2);
+        }
+
+        .edge-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .edge-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+
+        .edge-card p {
+            font-size: 13px;
+            color: var(--ink56);
+            line-height: 1.55;
+        }
+
+        /* DARK SECTION ITEMS */
+        .dark-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
+
+        .dark-item {
+            background: rgba(255, 252, 250, 0.05);
+            border: 1px solid rgba(255, 252, 250, 0.08);
+            border-radius: var(--r);
+            padding: 18px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .dark-item-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--rappi);
+            min-width: 52px;
+            padding-top: 2px;
+        }
+
+        .dark-item-text {
+            font-size: 14px;
+            color: rgba(255, 252, 250, 0.65);
+            line-height: 1.55;
+        }
+
+        .dark-item-text strong {
+            color: var(--cream);
+            font-weight: 600;
+        }
+
+        /* CLOSE SECTION */
+        .close-block {
+            text-align: center;
+            padding: 64px 28px 72px;
+        }
+
+        .close-block h2 {
+            color: var(--cream);
+            margin-bottom: 40px;
+        }
+
+        .close-sub {
+            font-size: 17px;
+            font-style: italic;
+            font-family: "Strawberry Serif", Georgia, serif;
+            font-weight: 500;
+            color: rgba(255, 252, 250, 0.45);
+            max-width: 400px;
+            margin: 40px auto 0;
+            line-height: 1.6;
+        }
+
+        .close-sub strong {
+            color: var(--cream);
+            font-style: normal;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: rgba(255, 252, 250, 0.3);
+            text-align: center;
+            padding: 28px;
+            font-size: 12px;
+            border-top: 1px solid rgba(255, 252, 250, 0.06);
+        }
+
+        /* FADE */
+        .fade {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.45s ease, transform 0.45s ease;
+        }
+
+        .fade.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width:640px) {
+            nav {
+                padding: 0 16px;
+            }
+
+            .nav-links li:nth-child(n+5) {
+                display: none;
+            }
+
+            .wrap {
+                padding: 56px 18px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .commit-row {
+                flex-direction: column;
+                gap: 1px;
+            }
+
+            .roles {
+                grid-template-columns: 1fr;
+            }
+
+            .role-arrow {
+                display: none;
+            }
+
+            .ten-day {
+                grid-template-columns: 1fr;
+            }
+
+            .formula {
+                flex-direction: column;
+            }
+
+            .formula-step::after {
+                display: none;
+            }
+
+            .network-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-row {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-card:last-child {
+                grid-column: auto;
+                width: auto;
+            }
+
+            .demo-tabs {
+                gap: 6px;
+            }
+        }
+    </style>
+
+    <style>
+        /* FORMULA */
+        .formula {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            margin-bottom: 28px;
+            border: 1px solid var(--stroke);
+            border-radius: var(--r);
+            overflow: hidden;
+        }
+
+        .formula-step {
+            flex: 1;
+            padding: 18px 14px;
+            background: var(--bg);
+            text-align: center;
+            border-right: 1px solid var(--stroke);
+            position: relative;
+            transition: background 0.15s;
+        }
+
+        .formula-step:hover {
+            background: var(--bg2);
+        }
+
+        .formula-step:last-child {
+            border-right: none;
+        }
+
+        .formula-step::after {
+            content: '→';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: var(--ink24);
+            z-index: 1;
+        }
+
+        .formula-step:last-child::after {
+            display: none;
+        }
+
+        .fs-num {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--ink56);
+            margin-bottom: 6px;
+        }
+
+        .fs-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink);
+            letter-spacing: -0.01em;
+            margin-bottom: 4px;
+        }
+
+        .fs-sub {
+            font-size: 11px;
+            color: var(--ink56);
+            line-height: 1.4;
+        }
+
+        /* NETWORK */
+        .network-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .net-card {
+            border: 1px solid var(--stroke);
+            border-radius: var(--r);
+            padding: 18px;
+            background: var(--bg);
+            text-align: center;
+            transition: background 0.15s;
+        }
+
+        .net-card:hover {
+            background: var(--bg2);
+        }
+
+        .net-icon {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .net-card h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+
+        .net-card p {
+            font-size: 12px;
+            color: var(--ink56);
+            line-height: 1.45;
+        }
+
+        /* DEMO TABS */
+        .demo-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .demo-tab {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ink56);
+            border: 1px solid var(--stroke);
+            border-radius: var(--pill);
+            padding: 5px 14px;
+            cursor: pointer;
+            background: var(--bg);
+            transition: all 0.15s;
+            font-family: "Strawberry Sans", system-ui, sans-serif;
+        }
+
+        .demo-tab:hover {
+            background: var(--bg2);
+            color: var(--ink);
+        }
+
+        .demo-tab.active {
+            background: var(--ink);
+            color: var(--cream);
+            border-color: var(--ink);
+        }
+
+        .demo-tab.rappi-tab.active {
+            background: var(--rappi);
+            border-color: var(--rappi);
+        }
+
+        .demo-panel {
+            display: none;
+            border: 1px solid var(--stroke);
+            border-radius: var(--r);
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .demo-panel.active {
+            display: block;
+        }
+
+        .demo-panel-head {
+            padding: 16px 20px;
+            background: var(--bg2);
+            border-bottom: 1px solid var(--stroke);
+        }
+
+        .demo-panel-head h4 {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 3px;
+        }
+
+        .demo-panel-head p {
+            font-size: 13px;
+            color: var(--ink56);
+        }
+
+        .demo-panel-body {
+            padding: 18px 20px;
+            background: var(--bg);
+        }
+
+        .demo-step {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--stroke);
+        }
+
+        .demo-step:last-child {
+            border-bottom: none;
+        }
+
+        .demo-step-n {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--bg2);
+            border: 1px solid var(--stroke);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--ink56);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .demo-panel.rappi-panel .demo-step-n {
+            background: var(--rappi-bg);
+            border-color: var(--rappi-st);
+            color: var(--rappi);
+        }
+
+        .demo-step-body h5 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 2px;
+            letter-spacing: -0.01em;
+        }
+
+        .demo-step-body p {
+            font-size: 12px;
+            color: var(--ink56);
+            line-height: 1.5;
+        }
+
+        /* TEAM BRAIN */
+        .brain-card {
+            border: 1px solid var(--stroke);
+            border-radius: var(--r);
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .brain-head {
+            padding: 14px 20px;
+            background: var(--ink);
+            color: var(--cream);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brain-head h4 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .brain-body {
+            padding: 18px 20px;
+            background: var(--bg);
+            font-size: 14px;
+            color: var(--ink);
+            line-height: 1.65;
+        }
+
+        .brain-body strong {
+            font-weight: 600;
+        }
+
+        /* RAPPI LOGO IMPACT */
+        .impact-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .impact-card {
+            border: 1px solid var(--rappi-st);
+            border-radius: var(--r);
+            padding: 18px 20px;
+            background: var(--rappi-bg);
+            text-align: center;
+        }
+
+        .impact-card:last-child {
+            grid-column: span 2;
+            justify-self: center;
+            width: calc(50% - 4px);
+        }
+
+        .impact-card h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 5px;
+            letter-spacing: -0.01em;
+        }
+
+        .impact-card p {
+            font-size: 12px;
+            color: var(--ink56);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-brand">🍓 TBG · GTM Brief</div>
+        <ul class="nav-links">
+            <li><a href="#opportunity">Rappi</a></li>
+            <li><a href="#roles">Roles</a></li>
+            <li><a href="#formula">Formula</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#demos">Demos</a></li>
+            <li><a href="#tendays">10 Days</a></li>
+        </ul>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="hero" id="top">
+
+        <h1>How I'll open<br><em>LATAM</em> for Strawberry</h1>
+
+        <div class="btn-row">
+            <a href="#opportunity" class="btn btn-dark">Start the walkthrough →</a>
+            <a href="#tendays" class="btn btn-ghost">Jump to 10 Days</a>
+        </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- ── SECTION 02: THE OPPORTUNITY ── -->
+    <div id="opportunity">
+        <div class="wrap fade">
+            <div style="display:flex; align-items:center; gap:14px; margin-bottom:4px;">
+                <div class="tag tag-rappi" style="margin-bottom:0;">The Rappi Opportunity</div>
+                <a href="https://www.rappi.com.co/" target="_blank" rel="noopener"
+                    style="display:inline-flex; align-items:center; opacity:0.8; transition:opacity 0.15s;"
+                    onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
+                    <img src="https://i.ibb.co/RG9rrS3m/rappi.png" alt="Rappi"
+                        style="height:26px; width:auto; display:block;">
+                </a>
+            </div>
+            <h2>The AI-first mandate<br>is already <em>live.</em></h2>
+            <p class="intro">Rappi's leadership made this public. The urgency is real and the timeline is compressed.
+            </p>
+
+            <div class="quote fade">
+                <p>We replaced our entire CRM Chile team. 17 AI agents. Zero humans. That is just the beginning.</p>
+                <div class="quote-attr">Simón Borrero, CEO · AMVO FWD Conference · May 12, 2026</div>
+            </div>
+
+            <div class="quote fade">
+                <p>"Rappi will suddenly operate at two or three times its output speed with 40 to 45% fewer people. We
+                    expect to
+                    complete this transformation in August or September of this year."</p>
+                <div class="quote-attr">Simón Borrero, CEO · Public statement · 2026</div>
+            </div>
+
+            <div class="quote fade">
+                <p>We are building the infrastructure to make every Rappi team AI-native. This is not optional. This is
+                    how we
+                    will operate.</p>
+                <div class="quote-attr">Pablo Dominguez, VP Engineering & AI · Oracle AI World · Oct 2025</div>
+            </div>
+
+            <br>
+            <div class="callout rappi fade">
+                <div class="callout-label">Job Posting · AI Engineer · April 23, 2026 </div>
+                <ul>
+                    <li>Building multi-agent pipelines — N8N, Python, LangChain</li>
+                    <li>Mandate: 3× output, 40% fewer people by August/September 2026</li>
+                    <li>Gap: Automation stops at the API layer: no authenticated browser access</li>
+                </ul>
+            </div>
+
+            <br>
+            <div class="callout fade">
+                <div class="callout-label">Why Strawberry Fits — The N8N Gap</div>
+                <p>N8N handles the API layer. <code>strawberry.tab(id)</code> handles authenticated browser
+                    sessions. </p>
+            </div>
+
+            <br>
+            <div class="brain-card fade">
+                <div class="brain-head"><span>🧠</span>
+                    <h4>Strawberry's Shared Team Brain — Built for Rappi's Scale</h4>
+                </div>
+                <div class="brain-body">
+                    Rappi's engineering teams run multiple agents across different workflows. Today each agent operates
+                    in
+                    isolation — what one learns, the others don't know.<br><br>
+                    With Strawberry's <strong>Shared Team Brain</strong>, every agent the team runs reads from the same
+                    knowledge
+                    base. What worked in one workflow is available to the next. The intelligence compounds across the
+                    whole team —
+                    not locked inside a single pipeline.<br><br>
+                </div>
+            </div>
+
+            <br>
+            <div class="tag tag-rappi" style="margin-bottom:12px;">Why This Logo Changes Everything</div>
+            <div class="impact-row fade">
+                <div class="impact-card">
+                    <img src="https://i.ibb.co/1GF6HVjp/open-the-door.gif" alt=""
+                        style="height:140px; width:auto; margin-bottom:10px;">
+                    <h4>The Open Door Signal</h4>
+                </div>
+                <div class="impact-card">
+                    <img src="https://i.ibb.co/9mtL1ft1/Phone-Call-Hello-GIF.gif" alt=""
+                        style="height:140px; width:auto; margin-bottom:10px;">
+                    <h4>Reference Call Ready</h4>
+                </div>
+                <div class="impact-card">
+                    <img src="https://i.ibb.co/BKBNJFYZ/proof.gif" alt=""
+                        style="height:140px; width:auto; margin-bottom:10px;">
+                    <h4>Seed Stage Proof</h4>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- ── SECTION 3: ROLES ── -->
+    <div class="wrap-tint" id="roles">
+        <div class="wrap fade">
+            <div class="tag">The Right People, The Right Order</div>
+            <h2>I have the<br><em>Influencer.</em></h2>
+            <p class="intro">My Father taught me that you don't go directly to the decision maker. You go through the
+                person
+                they already trust.</p>
+
+            <div class="roles fade">
+                <div class="role-card highlight">
+                    <div class="role-icon">🤝</div>
+                    <div class="role-name">Influencer</div>
+                    <div class="role-title">Andrés Bilbao</div>
+                    <div class="role-sub">Rappi co-founder. My direct contact.</div>
+                </div>
+                <div class="role-arrow">→</div>
+                <div class="role-card">
+                    <div class="role-icon">🏛️</div>
+                    <div class="role-name">Decision Maker</div>
+                    <div class="role-title">Pablo Dominguez</div>
+                    <div class="role-sub">VP Engineering & AI.-> Signs off on the technical decision. </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- ── SECTION 01: GTM FORMULA ── -->
+    <div id="formula">
+        <div class="wrap fade">
+            <div class="tag">TBG GTM Formula</div>
+
+            <div class="formula fade">
+                <div class="formula-step">
+                    <div class="fs-num">STEP 01</div>
+                    <div class="fs-label">ICP Filter</div>
+                    <div class="fs-sub">Browser-heavy ops, 5–50 people teams, AI-curious leadership</div>
+                </div>
+                <div class="formula-step">
+                    <div class="fs-num">STEP 02</div>
+                    <div class="fs-label">Warm Entry</div>
+                    <div class="fs-sub">Network contact as influencer</div>
+                </div>
+                <div class="formula-step">
+                    <div class="fs-num">STEP 03</div>
+                    <div class="fs-label">Tailored Demo</div>
+                    <div class="fs-sub">Their specific workflow, their specific pain, solved in 60 seconds</div>
+                </div>
+                <div class="formula-step">
+                    <div class="fs-num">STEP 04</div>
+                    <div class="fs-label">Concept Test</div>
+                    <div class="fs-sub">One week, one real workflow, documented ROI before the proposal</div>
+                </div>
+                <div class="formula-step">
+                    <div class="fs-num">STEP 05</div>
+                    <div class="fs-label">Close & Expand</div>
+                    <div class="fs-sub">Rolling monthly access → case study → next account in region</div>
+                </div>
+            </div>
+
+            <div class="callout fade">
+                <p>I have direct relationships with early employees, founders of small and large companies, and people
+                    who sit
+                    close to the decision makers I need to reach. That network shortens every step.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- ── SECTION 3: B2B PROCESS ── -->
+    <div id="process">
+        <div class="wrap fade">
+            <div class="tag">The Real B2B Sales Process</div>
+            <h2>Five stages.<br><em>No shortcuts.</em></h2>
+
+            <div class="stages">
+
+                <div class="stage open" onclick="toggleStage(this)">
+                    <div class="stage-header">
+                        <div class="stage-num">1</div>
+                        <div>
+                            <div class="stage-title">Listen &amp; Identify</div>
+                            <div class="stage-sub">Understand the need</div>
+                        </div>
+                        <div class="stage-chevron">▾</div>
+                    </div>
+                    <div class="stage-body">
+                        <strong>What happens:</strong> The first conversation is about understanding how they work,
+                        what's
+                        slowing
+                        them down, what they've already tried. You open with curiosity about
+                        their
+                        problem.
+                        <div class="rappi-note">
+                            <span>Rappi entry:</span> Andrés Bilbao opens the door. First conversations about :
+                            automation
+                            journey, what's working with N8N, what isn't, where the August deadline is creating
+                            pressure. I listen.
+                            I
+                            don't pitch.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stage" onclick="toggleStage(this)">
+                    <div class="stage-header">
+                        <div class="stage-num">2</div>
+                        <div>
+                            <div class="stage-title">Demo</div>
+                            <div class="stage-sub">Show the full capability, not just the gap</div>
+                        </div>
+                        <div class="stage-chevron">▾</div>
+                    </div>
+                    <div class="stage-body">
+                        <strong>What happens:</strong> Strawberry open, live, running a real task.
+                        <ul style="margin: 10px 0 0 16px; display:flex; flex-direction:column; gap:4px;">
+                            <li><strong>Memory</strong> — agents remember across sessions. N8N resets every run.</li>
+                            <li><strong>Skills</strong> — build a workflow once, every agent in the org runs it.</li>
+                            <li><strong>Parallel agents</strong> — <code>strawberry.startAgent</code> spins up multiple
+                                agents
+                                simultaneously, each handling a separate task in parallel.</li>
+                            <li><strong>Shared Team Brain</strong> — what one agent learns, every agent on the team
+                                reads. Knowledge
+                                compounds across the whole org.</li>
+                            <li><strong>Authenticated browser</strong> — <code>strawberry.tab(id)</code> accesses any
+                                portal, any
+                                dashboard, no API needed.</li>
+                        </ul>
+                        <div class="rappi-note">
+                            <span>Rappi demo:</span>Let Pablo Dominguez see it be used in a team.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stage" onclick="toggleStage(this)">
+                    <div class="stage-header">
+                        <div class="stage-num">3</div>
+                        <div>
+                            <div class="stage-title">Concept Test</div>
+                            <div class="stage-sub">1 week live proof of concept</div>
+                        </div>
+                        <div class="stage-chevron">▾</div>
+                    </div>
+                    <div class="stage-body">
+                        <strong>What happens:</strong> A one week scoped trial on defined infrastructure.
+                        This is where I'm
+                        forward-deployed —> inside their stack, building trust.
+                        <div class="rappi-note">
+                            <span>Rappi concept test:</span> One specific Rappi workflow: their CRM automation or data
+                            pipeline that N8N can't reach. I'm embedded alongside their AI Engineers.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stage" onclick="toggleStage(this)">
+                    <div class="stage-header">
+                        <div class="stage-num">4</div>
+                        <div>
+                            <div class="stage-title">Commercial Proposal</div>
+                            <div class="stage-sub">Based on concept test results</div>
+                        </div>
+                        <div class="stage-chevron">▾</div>
+                    </div>
+                    <div class="stage-body">
+                        <strong>The proposal </strong> is built on real numbers: users, instances, workflows, use cases.
+                        The ROI
+                        case is already documented.
+                        <div class="rappi-note">
+                            <span>Rappi proposal:</span> Strawberry's rolling monthly model makes this low-friction. The
+                            proposal
+                            includes the documented concept test result, expansion to 2–3 additional workflows, and a
+                            named ROI target for Month 3.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stage" onclick="toggleStage(this)">
+                    <div class="stage-header">
+                        <div class="stage-num">5</div>
+                        <div>
+                            <div class="stage-title">Negotiation &amp; Close</div>
+                            <div class="stage-sub">LATAM moves warm — follow-up moves deals</div>
+                        </div>
+                        <div class="stage-chevron">▾</div>
+                    </div>
+                    <div class="stage-body">
+                        In LATAM, enthusiasm in the room doesn't mean signed. Consistent follow-up does. Rappi has
+                        startup founders
+                        and enterprise bureaucracy, Andrés and Pablo say yes, finance can still stall.
+                        <div class="rappi-note">
+                            <span>The unlock:</span> Rolling monthly no long commitment, no legal marathon. The August
+                            deadline is
+                            Borrero's pressure, not yours. Reflect it back, don't manufacture it.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- ── SECTION 05: DEMO ARSENAL ── -->
+    <div id="demos">
+        <div class="wrap fade">
+            <div class="tag">The Demo Arsenal</div>
+            <h2>I always come<br><em>Prepared.</em></h2>
+            <p class="intro">Not a product tour. A live Strawberry session on a workflow Rappi's engineers already
+                recognize.
+            </p>
+
+            <div class="demo-tabs fade">
+                <button class="demo-tab active" onclick="setDemo('sales')">🍊 Rappi Sales</button>
+                <button class="demo-tab" onclick="setDemo('growth')">🍊 Rappi Growth</button>
+                <button class="demo-tab" onclick="setDemo('ops')">🍊 Rappi Ops</button>
+            </div>
+
+            <!-- Rappi Sales -->
+            <div class="demo-panel active" id="demo-sales">
+                <div class="demo-panel-head" style="background: var(--rappi-bg); border-color: var(--rappi-st);">
+                    <h4>Rappi Sales Team — Partner Acquisition</h4>
+                    <p>Rappi's sales reps sign up restaurants and stores across LATAM.</p>
+                </div>
+                <div class="demo-panel-body">
+                    <div class="demo-step">
+                        <div class="demo-step-n">1</div>
+                        <div class="demo-step-body">
+                            <h5>Start with a question</h5>
+                            <p>"How long does it take your sales rep to research a new restaurant partner, log it, and
+                                write the first
+                                outreach?" Let them answer -> show the solution.</p>
+                        </div>
+                    </div>
+                    <div class="demo-step">
+                        <div class="demo-step-n">2</div>
+                        <div class="demo-step-body">
+                            <h5>Live: Strawberry does it in 60 seconds</h5>
+                            <p>Open a restaurant's page. Companion reads the site, finds the owner contact, logs the
+                                lead in the CRM
+                                via <code>strawberry.crm.create</code>, drafts a personalized outreach in Spanish. No
+                                copy-paste.</p>
+                        </div>
+                    </div>
+                    <div class="demo-step">
+                        <div class="demo-step-n">3</div>
+                        <div class="demo-step-body">
+                            <h5>Memory: it knows what already ran</h5>
+                            <p>Next session, Strawberry already knows which restaurants were contacted, what stage
+                                they're at, what
+                                worked.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rappi Growth -->
+            <div class="demo-panel" id="demo-growth">
+                <div class="demo-panel-head" style="background: var(--rappi-bg); border-color: var(--rappi-st);">
+                    <h4>Rappi Growth Team — Multi-Market Monitoring</h4>
+                    <p>Growth teams track campaign performance across Colombia, Mexico, Brazil and more.
+                    </p>
+                </div>
+                <div class="demo-panel-body">
+                    <div class="demo-step">
+                        <div class="demo-step-n">1</div>
+                        <div class="demo-step-body">
+                            <h5>Start with a question</h5>
+                            <p>"How does your growth team compile performance data across markets today? Who and how
+                                long". </p>
+                        </div>
+                    </div>
+                    <div class="demo-step">
+                        <div class="demo-step-n">2</div>
+                        <div class="demo-step-body">
+                            <h5>Live: parallel agents per market</h5>
+                            <p><code>strawberry.startAgent</code> spins up agents simultaneously each reads a different
+                                market
+                                dashboard, extracts the key metrics, and feeds results into one shared brief.</p>
+                        </div>
+                    </div>
+                    <div class="demo-step">
+                        <div class="demo-step-n">3</div>
+                        <div class="demo-step-body">
+                            <h5>Shared Team Brain: context compounds</h5>
+                            <p>Every brief is written back to the team brain. Next week's run already knows last week's
+                                benchmarks.
+                                The analysis gets smarter automatically.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rappi Ops -->
+            <div class="demo-panel" id="demo-ops">
+                <div class="demo-panel-head" style="background: var(--rappi-bg); border-color: var(--rappi-st);">
+                    <h4>Rappi Ops Team — The N8N Gap</h4>
+                    <p>Any internal tool Rappi's team make for: logistics portals, partner dashboards, payment tools
+                        N8N cannot touch. Strawberry can.</p>
+                </div>
+                <div class="demo-panel-body">
+                    <div class="demo-step">
+                        <div class="demo-step-n">1</div>
+                        <div class="demo-step-body">
+                            <h5>Start with a question</h5>
+                            <p>"Which internal tools does your team log into manually every day that you can't automate
+                                because
+                                there's no API?". Almost every ops team has several. That's the opening.</p>
+                        </div>
+                    </div>
+                    <div class="demo-step">
+                        <div class="demo-step-n">2</div>
+                        <div class="demo-step-body">
+                            <h5>Live: <code>strawberry.tab(id)</code> inside an authenticated session</h5>
+                            <p>Strawberry logs in, navigates to the data, extracts it into a structured format — no API,
+                                no scraper.
+                                "This is the layer your N8N pipeline can't reach."</p>
+                        </div>
+                    </div>
+                    <div class="demo-step">
+                        <div class="demo-step-n">3</div>
+                        <div class="demo-step-body">
+                            <h5>Save it as a Skill</h5>
+                            <p>Build it once, save as a Skill.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- ── SECTION 06: FIRST 10 DAYS ── -->
+    <div class="wrap-tint" id="tendays">
+        <div class="wrap fade">
+            <div class="tag">First 10 Days</div>
+            <h2>Start the engine.<br><em>Not the close.</em></h2>
+            <p class="intro">The first 10 days are not about closing a deal. They're about understanding deeply and
+                starting
+                the right conversations through the right people.</p>
+
+            <div class="ten-day fade">
+                <div class="ten-card focus">
+                    <div class="ten-label">Priority 1</div>
+                    <h4>Understand the tool and the company</h4>
+                    <p>Go deep on Strawberry's product. Understand the feature, every integratio. Understand how
+                        the internal team sells today and where the gaps are.</p>
+                </div>
+                <div class="ten-card focus">
+                    <div class="ten-label">Priority 2</div>
+                    <h4>Plant the seed with Rappi </h4>
+                    <p>Reach out to Andrés Bilbao. Let him
+                        gauge internal interest before anything formal happens.</p>
+                </div>
+                <div class="ten-card">
+                    <div class="ten-label">Priority 3</div>
+                    <h4>Map the broader target list</h4>
+                    <p>Identify 5–8 LATAM companies fitting the ICP: browser-heavy ops, AI-curious leadership, 5–50
+                        person
+                        teams.
+                        Prioritize by existing network proximity.</p>
+                </div>
+                <div class="ten-card">
+                    <div class="ten-label">Priority 4</div>
+                    <h4>Define the message and how to carry it</h4>
+                    <p>Not a generic pitch — a specific pain + specific capability for each target. Draft Spanish
+                        outreach that
+                        feels personal, not templated.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- ── SECTION 5: GTM EDGE ── -->
+    <div id="edge">
+        <div class="wrap fade">
+            <div class="tag">Why I Win This Account</div>
+            <h2>The advantages<br>that <em>don't replicate.</em></h2>
+            <p class="intro">Three things no outside hire has on Day 1. These are structural advantages — not claims.
+            </p>
+
+            <div class="edges">
+                <div class="edge-card fade">
+                    <div class="edge-icon"></div>
+                    <div>
+                        <h4>Direct line into Rappi — Andrés Bilbao</h4>
+                        <p>I have a direct contact with a Rappi co-founder.
+                            Entry point into a $5.25B company.</p>
+                    </div>
+                </div>
+                <div class="edge-card fade">
+                    <div class="edge-icon"></div>
+                    <div>
+                        <h4>LATAM native —> language, culture, trust</h4>
+                        <p>I speak Spanish as a first language and understand how business trust is built in this region
+                            before
+                            contracts are signed.</p>
+                    </div>
+                </div>
+                <div class="edge-card fade">
+                    <div class="edge-icon"></div>
+                    <div>
+                        <h4>I am Forward deployed. In the whole process</h4>
+                        <p>In a seed-stage company, that speed and autonomy is the
+                            difference between a concept test that produces a number and one that stalls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rule-dark" style="background:var(--stroke);"></div>
+
+    <!-- ── SECTION 6: COMMIT ── -->
+    <div class="wrap-dark" id="commit">
+        <div class="close-block fade">
+            <div class="tag">The Plan</div>
+            <h2>Realistic.<br><em>Grounded yet AMBITIOUS</em></h2>
+
+            <p class="close-sub">
+                I am so confident in my skills, my ambition, and my optimism, yet grounded to help grow strawberry and
+                learn
+                from the team.
+            </p>
+        </div>
+
+        <div class="rule-dark"></div>
+        <footer>🍓 &nbsp;GTM Plan · TBG · tommybg.com · May 2026</footer>
+    </div>
+
+    <script>
+        function setDemo(id) {
+            document.querySelectorAll('.demo-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('demo-' + id).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function toggleStage(el) {
+            document.querySelectorAll('.stage').forEach(s => { if (s !== el) s.classList.remove('open'); });
+            el.classList.toggle('open');
+        }
+
+        // Fade in on scroll
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+        }, { threshold: 0.07 });
+        document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+        // Active nav
+        const secs = document.querySelectorAll('[id]');
+        const links = document.querySelectorAll('.nav-links a');
+        const nio = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting)
+                    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+            });
+        }, { threshold: 0.3 });
+        secs.forEach(s => nio.observe(s));
+    </script>
+</body>
+
+</html>
