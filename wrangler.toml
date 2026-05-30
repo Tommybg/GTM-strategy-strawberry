@@ -1,0 +1,4 @@
+name = "gtm-strategy-strawberry"
+
+[assets]
+directory = "./public"
